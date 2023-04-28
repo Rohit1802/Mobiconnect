@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mobi Connect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="home.component.css">
+  </head>
+  <body>
+    <header>
+      <!-- <asl-google-signin-button *ngIf="!user"></asl-google-signin-button>
+      <div *ngIf="user">
+        <img [src]="user.photoUrl" alt="">
+        <div>
+          <h4>{{user.name}}</h4>
+          <p>{{user.email}}</p>
+        </div>
+      </div> -->
+      <div class="logo-container">
+        <img src="/assets/images/company-logo.png" alt="MOBIREY LLC">
+        <span>MOBIREY LLC</span>
+      </div>
+      <nav ng-controller="NavController">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li ng-controller="TimesheetController">
+            <a href="#">Timesheet</a>
+            <ul>
+              <li><a href="#">Submit timesheet</a></li>
+              <li><a href="#">Approve timesheet</a></li>
+              <li><a href="#">View timesheets</a></li>
+            </ul>
+          </li>
+          <li ng-controller="LeavesController">
+            <a href="#">Leaves</a>
+            <ul>
+              <li><a routerLink="../leaves">Submit Leaves</a></li>
+              <li><a href="#">Approve Leaves</a></li>
+              <li><a routerLink="../view-leaves">View Leaves</a></li>
+            </ul>
+          </li>
+          <li ng-controller="EmployeeController">
+            <a href="#">Employee</a>
+            <ul>
+              <li><a href="#">Onboard</a></li>
+              <li><a href="#">Edit/modify</a></li>
+            </ul>
+          </li>
+          <li ng-controller="ProjectController">
+            <a href="#">Project</a>
+            <ul>
+              <li><a href="#">Onboard</a></li>
+              <li><a href="#">Edit/modify</a></li>
+            </ul>
+          </li>
+          <li ng-controller="ClientController">
+            <a href="#">Client</a>
+            <ul>
+              <li><a href="#">Onboard</a></li>
+              <li><a href="#">Edit/modify</a></li>
+            </ul>
+          </li>
+        </ul>
+            <a href="#">
+              <img src="/assets/images/profile.png" alt="User profile photo" class="img-round">
+              <span class="user-name">{{ user.name }}</span>
+            </a>
+      
+      </nav>
+    </header>
+    <main><br>
+      <h1>Welcome to MOBICONNECT home page</h1><br>
+      <br><br>
+      <h2>Projects with Vacancy</h2><br>
+      <table>
+        <thead>
+          <tr>
+            <th>Project Name</th>
+            <th>Project Leader</th>
+            <th>Email </th>
+            <th class="members">Project Members</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mobiconnect-EMS</td>
+            <td>Basava Kiran</td>
+            <td><a href="mailto:basava.kiran@outlook.com">basava.kiran@outlook.com</a></td>
+            <td><a href="mailto:ishika.gupta@outlook.com,atharv.kad@outlook.com">Ishika Gupta, Atharv kad</a></td>
+          </tr>
+          <tr>
+            <td>MobiConnect-AMS</td>
+            <td>Basava Kiran</td>
+            <td><a href="mailto:basava.kiran@outlook.com">basava.kiran@outlook.com</a></td>
+            <td><a href="mailto:akash.nikkam@outlook.com,rohit.kalubarme@outlook.com">Akash Nikkam, Rohit Kalubarme</a></td>
+          </tr>
+        </tbody>
+      </table><br>
+
+      <div>You can access your payroll sign in page here
+        <a href="https://accounts.zoho.com/signin?servicename=ZohoPayroll&signupurl=https://www.zoho.com/in/payroll/signup/index.html" target="_blank" rel="noopener">Zoho Payroll</a>
+      </div><br>
+      
+    </main>
+    <footer>
+      <p> MOBIREY &copy; Copyright 2023 | All Rights Reserved</p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>MobiConnect-Leaves</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="leaves.component.css">
+  </head>
+  <h1> MobiConnect Leave Form</h1>
+  <body  ng-controller="LeavesController">
+    <form class="form-border" [formGroup]="leaveForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="type">Leave Type:</label>
+            <select id="type" formControlName="type" required [class.error]="leaveForm.get('type')?.invalid && leaveForm.get('type')?.touched">
+              <option value="">Select a leave type</option>
+              <option value="sick">Sick Leave</option>
+              <option value="unpaid">Unpaid Leave</option>
+              <option value="halfday">Halfday Leave</option>
+            </select>
+            <div *ngIf="leaveForm.get('type')?.invalid && leaveForm.get('type')?.touched">
+                <div *ngIf="leaveForm.get('type')?.errors?.['required']" class="error-message">Leave type field is required.</div>
+              </div> 
+          </div>
+          <div>
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" formControlName="startDate" required [class.error]="leaveForm.get('startDate')?.invalid && leaveForm.get('startDate')?.touched">    
+            <div *ngIf="leaveForm.get('startDate')?.invalid && leaveForm.get('startDate')?.touched">
+              <div *ngIf="leaveForm.get('startDate')?.errors?.['required']"  class="error-message">The start date is required.</div>
+              </div>
+          </div>
+          <div>
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" formControlName="endDate" required [class.error]="leaveForm.get('endDate')?.invalid && leaveForm.get('endDate')?.touched">
+            <div *ngIf="leaveForm.get('endDate')?.invalid && leaveForm.get('endDate')?.touched" class="error-message">The end date is required.</div>
+          </div>
+          <div>
+            <label for="day">Day:</label>
+            <input type="text" id="day" formControlName="day" required [class.error]="leaveForm.get('day')?.invalid && leaveForm.get('day')?.touched">
+            <div *ngIf="leaveForm.get('day')?.invalid && leaveForm.get('day')?.touched" class="error-message">Days field  is required.</div>
+          </div>
+          <div>
+            <label for="approver">Approver:</label>
+            <select id="approver" formControlName="approver" required [class.error]="leaveForm.get('approver')?.invalid && leaveForm.get('approver')?.touched">
+              <option *ngFor="let approver of approvers" [value]="approver">{{approver}}</option>
+            </select>
+            <div *ngIf="leaveForm.get('approver')?.invalid && leaveForm.get('approver')?.touched">
+                <div *ngIf="leaveForm.get('approver')?.errors?.['required']" class="error-message">Approver field is required.</div>
+              </div>
+          </div>
+          <button type="submit">Submit</button>
+      </form>
+    <!-- <script>
+      var app = angular.module('myApp', []);
+      app.controller('LeavesController', function($scope) {
+      $scope.leaveForm = {}; // Define the leaveForm object
+
+      $scope.onSubmit = function() { // Update the function name to match the one in the HTML
+      //   if ($scope.leaveForm.$valid) {
+      //     // Submit form to server
+      //     console.log($scope.leaveForm);
+      //   } else {
+      //     console.log('Form is invalid');
+      //   }
+      };
+    });
+    </script> -->
+  </body>
+</html>
+    

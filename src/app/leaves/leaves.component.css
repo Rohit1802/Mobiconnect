@@ -1,0 +1,87 @@
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #251c1c;
+  margin: 0;
+  padding: 0;
+  margin: 3.5rem auto;
+}
+
+/* Form styles */
+.form-border {
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 600px;
+  background-color: #f2f2f2;
+}
+
+input[type="text"]:focus, input[type="date"]:focus, select:focus  {
+  width: 100%;
+    padding: 10px;
+    padding-right: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: none;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+select option[value=""] {
+  color: #999;
+}
+
+button[type="submit"] {
+  display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0062cc;
+}
+
+/* Error message styles */
+.error-message {
+  color: red;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+input.error,
+.error {
+  border: 1px solid red;
+}
+
+h1 {
+  text-align: center;
+}
+
+
+

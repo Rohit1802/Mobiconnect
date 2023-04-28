@@ -1,0 +1,65 @@
+<div class="container">
+  <form #myForm="ngForm" class="form" (ngSubmit)="onSubmit()">
+    <label for="start-date">Start Date:</label>
+    <input
+      type="date"
+      id="start-date"
+      name="start-date"
+      [(ngModel)]="startDate"
+      required
+    />
+
+    <button type="submit" (click)="myfunction()">Submit</button>
+  </form>
+
+  <div [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div formArrayName="items">
+      <table class="table" [class.changestyle]="check">
+        <tr>
+          <th rowspan="2">Projects</th>
+          <th [attr.colspan]="16">Month {{ Month }} 2023</th>
+          <th rowspan="2">Total hours</th>
+        </tr>
+        <tr>
+          <td *ngFor="let dayNumber of dayNumbers">
+            {{ dayNumber }}
+          </td>
+        </tr>
+        <tr *ngFor="let item of items.controls; let i=index" [formGroupName]="i">
+          <td>
+            <div class="select">
+              <select formControlName="project">
+                <option selected disabled>Choose</option>
+                <option value="EMS">EMS</option>
+                <option value="AMS">AMS</option>
+                <option value="Graphana">Graphana</option>
+              </select>
+            </div>
+          </td>
+          <td><input type="text" formControlName="day1"></td>
+          <td><input type="text" formControlName="day2"></td>
+          <td><input type="text" formControlName="day3"></td>
+          <td><input type="text" formControlName="day4"></td>
+          <td><input type="text" formControlName="day5"></td>
+          <td><input type="text" formControlName="day6"></td>
+          <td><input type="text" formControlName="day7"></td>
+          <td><input type="text" formControlName="day8"></td>
+          <td><input type="text" formControlName="day9"></td>
+          <td><input type="text" formControlName="day10"></td>
+          <td><input type="text" formControlName="day11"></td>
+          <td><input type="text" formControlName="day12"></td>
+          <td><input type="text" formControlName="day13"></td>
+          <td><input type="text" formControlName="day14"></td>
+          <td><input type="text" formControlName="day15"></td>
+          <td><input type="text" formControlName="day16"></td>
+          <td>{{TotalHours}}</td>
+        </tr>
+        <div class="AddItem">
+          <button class="btn__add" type="button" (click)="addItem1()">Add</button>
+          <button class="primary__blue" type="submit" (click)="onsubmit1()">Save</button>
+        </div>
+      </table>
+    </div>
+  </div>
+</div>
+
